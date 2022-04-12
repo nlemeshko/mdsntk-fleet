@@ -29,7 +29,7 @@ namespace:
   enabled: enable
 # Ingress 
 ingress:
-  enabled: enable
+  enabled: false
   name: site-ingress
   path: /
 
