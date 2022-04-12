@@ -19,10 +19,10 @@ metadata:
               backend:
                 serviceName: {{ .Values.service.name }}
                 servicePort: {{ .Values.service.servicePort }}
-  tls:
-    - hosts:
-        -  {{ .Values.ingress.name }}
-      secretName: 
+    tls:
+      - hosts:
+          -  {{ .Values.ingress.name }}
+        secretName: 
 {{- end }}
 
 
