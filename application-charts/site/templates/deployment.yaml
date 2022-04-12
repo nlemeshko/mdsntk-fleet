@@ -26,7 +26,15 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: {{ .Values.deployment.port }}
+        volumeMounts:
+          - name: config-{{ .Values.deployment.name }}
+            mountPath: /etc/nginx/conf.d/default.conf
+            subPath: default.conf
       restartPolicy: Always
+      volumes:
+        - name: config-{{ .Values.deployment.name }}
+          configMap:
+            name: config-{{ .Values.deployment.name }}
       imagePullSecrets:
         - name: regcred
 {{- end }}
