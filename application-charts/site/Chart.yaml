@@ -9,7 +9,7 @@ name: site
 appVersion: "0.1.0"
 version: 0.1.0
 dependencies:
-  - name: ecommerce-platform
+  - name: mdsntk-platform
     repository: file://../../mdsntk-platform
     version: 0.1.0
     alias: site
