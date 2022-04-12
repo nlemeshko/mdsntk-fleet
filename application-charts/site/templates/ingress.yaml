@@ -2,16 +2,16 @@
   apiVersion: networking.k8s.io/v1beta1
   kind: Ingress
   metadata:
-    name: {{ .Values.site.ingress.name }}
+    name: {{ .Values.ingress.name }}
     annotations:
       kubernetes.io/ingress.class: nginx
     labels:
-      app: {{ .Values.site.ingress.name }}
+      app: {{ .Values.ingress.name }}
   spec:
     rules:
       - http:
           paths:
-            - path: {{ .Values.site.ingress.path }}
+            - path: {{ .Values.ingress.path }}
               backend:
                 serviceName: {{ .Values.service.name }}
                 servicePort: {{ .Values.service.servicePort }}

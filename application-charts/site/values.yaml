@@ -30,7 +30,6 @@ namespace:
 # Ingress 
 ingress:
   enabled: enable
-site:
   name: site-ingress
   path: /
 
