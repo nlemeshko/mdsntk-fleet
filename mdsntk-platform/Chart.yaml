@@ -1,9 +1,0 @@
-apiVersion: v2
-description: A mdsntk Applications
-keywords:
-- mdsntk-platform
-maintainers:
-- email: admin@mdsn.tk
-  name: Nicky Lemeshko
-name: mdsn-platform
-version: 0.1.0

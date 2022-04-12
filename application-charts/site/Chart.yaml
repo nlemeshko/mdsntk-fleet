@@ -1,5 +1,5 @@
 apiVersion: v2
-description: The mdsntk site helm chart
+description: The mdsn site helm chart
 keywords:
   - site
 maintainers:
@@ -8,8 +8,3 @@ maintainers:
 name: site
 appVersion: "0.1.0"
 version: 0.1.0
-dependencies:
-  - name: mdsntk-platform
-    repository: file://../../mdsntk-platform
-    version: 0.1.0
-    alias: site

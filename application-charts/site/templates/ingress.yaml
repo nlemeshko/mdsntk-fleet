@@ -2,7 +2,7 @@
   apiVersion: networking.k8s.io/v1beta1
   kind: Ingress
   metadata:
-    name: {{ .Values.graphql.ingress.name }}
+    name: {{ .Values.site.ingress.name }}
     annotations:
       kubernetes.io/ingress.class: nginx
     labels:
@@ -13,6 +13,6 @@
           paths:
             - path: {{ .Values.site.ingress.path }}
               backend:
-                serviceName: {{ .Values.site.ingress.serviceName }}
-                servicePort: {{ .Values.site.ingress.servicePort }}
+                serviceName: {{ .Values.service.name }}
+                servicePort: {{ .Values.service.servicePort }}
 {{- end }}

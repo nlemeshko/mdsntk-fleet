@@ -1,0 +1,37 @@
+# Deployment object
+deployment:
+  enabled: true
+  name: site
+  namespace: mdsntk
+  replicas: 3
+  appName: site
+  role: nginx
+  containerName: site-container
+  imageRepository: ghcr.io/nlemeshko/mdsntk
+  imageTag: "1.0.0"
+  port: 80
+# Service object
+service:
+  enabled: true
+  name: site-service
+  namespace: mdsntk
+  appName: site
+  type: ClusterIP
+  servicePort: 80
+  targetPort: 80
+# Service Account object
+serviceAccount:
+  enabled: true
+  name: site-service-account
+  namespace: mdsntk
+# Namespace object
+namespace:
+  enabled: enable
+# Ingress 
+ingress:
+  enabled: enable
+site:
+  name: site-ingress
+  path: /
+
+
