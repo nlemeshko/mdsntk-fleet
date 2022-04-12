@@ -26,7 +26,8 @@ serviceAccount:
   namespace: mdsntk
 # Namespace object
 namespace:
-  enabled: false
+  enabled: enable
+  name: mdsntk
 # Ingress 
 ingress:
   enabled: false
