@@ -26,6 +26,14 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: {{ .Values.deployment.port }}
+      - name: php-{{ .Values.deployment.containerName }}
+        image: "php:7.4-fpm"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9000
       imagePullSecrets:
         - name: regcred
 {{- end }}
