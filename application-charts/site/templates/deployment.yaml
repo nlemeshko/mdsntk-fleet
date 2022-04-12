@@ -19,10 +19,13 @@ spec:
       containers:
       - name: {{ .Values.deployment.containerName }}
         image: "{{ .Values.deployment.imageRepository }}:{{ .Values.deployment.imageTag }}"
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
         - containerPort: {{ .Values.deployment.port }}
+      imagePullSecrets:
+        - name: regcred
 {{- end }}
