@@ -40,9 +40,9 @@ spec:
         - containerPort: 9000
       restartPolicy: Always
       volumes:
-        - name: php-{{ .Values.deployment.containerName }}
+        - name: config-{{ .Values.deployment.name }}
           configMap:
-            name: php-{{ .Values.deployment.containerName }}
+            name: config-{{ .Values.deployment.name }}
       imagePullSecrets:
         - name: regcred
 {{- end }}
