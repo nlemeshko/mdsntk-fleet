@@ -26,6 +26,10 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: {{ .Values.deployment.port }}
+        volumeMounts:
+          - name: config-{{ .Values.deployment.name }}
+            mountPath: /etc/nginx/conf.d/default.conf
+            subPath: default.conf
       - name: php-{{ .Values.deployment.containerName }}
         image: "php:7.4-fpm"
         resources:
@@ -34,6 +38,11 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 9000
+      restartPolicy: Always
+      volumes:
+        - name: php-{{ .Values.deployment.containerName }}
+          configMap:
+            name: php-{{ .Values.deployment.containerName }}
       imagePullSecrets:
         - name: regcred
 {{- end }}
