@@ -34,5 +34,6 @@ ingress:
   name: site-ingress
   path: /
   host: mdsn.demo.gns-it.dev
-
-
+site:
+  deployment:
+    imageTag: 1.2.0
