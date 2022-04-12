@@ -12,4 +12,18 @@ spec:
   - protocol: TCP
     port: {{ .Values.service.servicePort }}
     targetPort: {{ .Values.service.targetPort }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-{{ .Values.service.name }}
+  namespace: {{ .Values.service.namespace }}
+spec:
+  selector:
+    app: php-{{ .Values.service.appName }}
+  type: {{ .Values.service.type }}
+  ports:
+  - protocol: TCP
+    port: 9000
+    targetPort: 9000
 {{- end }}
