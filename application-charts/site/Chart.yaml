@@ -1,0 +1,10 @@
+apiVersion: v2
+description: The mdsn.tk helm chart
+keywords:
+  - site
+maintainers:
+  - email: admin@mdsn.tk
+    name: Nicky Lemeshko
+name: site
+appVersion: "0.1.0"
+version: 0.1.0
