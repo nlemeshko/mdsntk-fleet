@@ -30,8 +30,9 @@ namespace:
   name: mdsntk
 # Ingress 
 ingress:
-  enabled: false
+  enabled: true
   name: site-ingress
   path: /
+  host: mdsn.demo.gns-it.dev
 
 
